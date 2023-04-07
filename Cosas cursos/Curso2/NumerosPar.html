@@ -1,0 +1,16 @@
+<html>
+    <script>
+        function imprimir(text){
+            document.write(text)
+            document.write("<br>")
+        }
+        var nPrimos=parseInt(prompt("Ingrese la cantidad de N primos que quiere"))
+        var count=1
+        while(count<=nPrimos){
+            if(count%2==0){
+                imprimir(count)
+            }
+            count=count+1
+        }
+    </script>
+</html>
