@@ -1,0 +1,24 @@
+<meta charset="UTF-8">
+
+<script>
+
+function saltarLinea(){
+    document.write("<br>")
+    document.write("<br>")
+    document.write("<br>")
+}
+function imprimir(frase){
+    document.write(frase)
+    saltarLinea()
+}
+
+var numeroUsuario = parseInt(prompt("Introduce un numero entre 0 y 10"))
+var numeroMaquina = Math.round(Math.random()*10,0)
+if(numeroMaquina==numeroUsuario){
+    imprimir("Ganaste")
+}
+else{
+    imprimir("Perdiste")
+}
+imprimir("Los puntos del equipo son: "+puntos)
+</script>

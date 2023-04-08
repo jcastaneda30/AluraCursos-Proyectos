@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+<head>
+	<title>Mostrar Texto</title>
+</head>
+<body>
+    <input type="text">
+	<button>Mostrar Texto</button>
+    <div id="hola"></div>
+</body>
+<script>
+    
+    let text=document.querySelector("input")
+    text.focus()
+    function escribirTexto(){
+        let nuevoTexto=document.getElementById("hola")
+        nuevoTexto.innerHTML=text.value
+    }
+
+    let button = document.querySelector("button")
+    button.onclick = escribirTexto
+</script>
+</html>

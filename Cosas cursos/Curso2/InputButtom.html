@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+<head>
+	<title>Botón HTML</title>
+</head>
+<body>
+    <input type="number">
+	<button>Presiona aquí</button>
+</body>
+<script>
+    
+    let secreto=5;
+    let numero=document.querySelector("input")
+    numero.focus()
+    function verificar(){
+        if(parseInt(numero.value)==secreto){
+            alert("Acertó")
+        }else{
+            alert("Falló")
+        }
+        /*Cambia el valor en la casilla*/
+        numero.value=""
+        /*Focaliza en ese lugar*/
+        numero.focus()
+    }
+
+    let button = document.querySelector("button")
+    button.onclick = verificar
+</script>
+</html>

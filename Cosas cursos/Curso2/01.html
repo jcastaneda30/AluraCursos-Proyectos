@@ -1,0 +1,21 @@
+<meta charset="UTF-8">
+
+<script>
+
+function saltarLinea(){
+    document.write("<br>")
+    document.write("<br>")
+    document.write("<br>")
+}
+function imprimir(frase){
+    document.write(frase)
+    saltarLinea()
+}
+
+var victorias = parseInt(prompt("Introduce las victorias del equipo"))
+var empates = parseInt(prompt("Introduce los empates del equipo"))
+
+var puntos=victorias*3+empates
+
+imprimir("Los puntos del equipo son: "+puntos)
+</script>
