@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <meta charset="UTF-8" />
+
+    <canvas width="600" height="600"></canvas>
+
+    <script>
+      function cantidadCuadrados(x,y){
+        let pantalla = document.querySelector("canvas");
+        let pincel = pantalla.getContext("2d");
+
+        for(let i=0;i<x;i++){
+          colors=["red","yellow","green"]
+          pincel.fillStyle = "lightgrey";
+          pincel.fillRect(i*100, 0, 100, 100);
+          pincel.fillStyle = "black";
+          pincel.strokeRect(i*100, 0, 100, 100)
+          for(let k=0;k<y;k++){
+            pincel.fillStyle = colors[k];
+            pincel.fillRect(i*100, 100*k, 100, 100);
+            pincel.fillStyle = "black";
+            pincel.strokeRect(i*100, 100*k, 100, 100)
+          }
+        }
+
+
+      }
+      cantidadCuadrados(6,3)
+
+    </script>
+  </body>
+</html>
