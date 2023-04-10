@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<canvas width="600" height="600"></canvas>
+<body>
+    <script>
+        let pantalla = document.querySelector("canvas")
+        let pencil = pantalla.getContext("2d")
+        pencil.fillStyle = "grey"
+        pencil.fillRect(0,0,600,600)
+        pencil.fillStyle = "black";
+        function posicion(evento){
+            let x = evento.pageX - pantalla.offsetLeft;
+            let y = evento.pageY - pantalla.offsetTop;
+            alert(x+" , "+y)            
+        }
+        function dibujarCirculo(evento) {
+            let x = evento.pageX - pantalla.offsetLeft;
+            let y = evento.pageY - pantalla.offsetTop;
+            console.log(x+" "+y)
+
+            pencil.beginPath();
+            pencil.arc(x, y, 10, 0, 2*3.14);
+            pencil.fill();
+        }
+        pantalla.onclick = dibujarCirculo;
+        let count = 0
+        colores=["black","blue","red"]
+        function alterarColor() {
+            count+=1
+            if(count>2){
+                    count=0
+            }
+            pencil.fillStyle=colores[count]
+            console.log(colores[count])
+            return false;
+        }
+        pantalla.oncontextmenu = alterarColor;
+    </script>
+</body>
+</html>
