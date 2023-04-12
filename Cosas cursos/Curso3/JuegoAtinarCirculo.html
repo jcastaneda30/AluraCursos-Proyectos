@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas width="600" height="600"></canvas>
+    <script>
+        let pantalla = document.querySelector("canvas")
+        let pencil = pantalla.getContext("2d")
+        let Px;
+        let Py;
+        let radio
+        pencil.fillStyle="gray"
+        pencil.fillRect(0,0,600,600)
+        function dibujarCirculo(x,y,radio,color){
+            pencil.fillStyle = color
+            pencil.beginPath()
+            pencil.arc(x,y,radio,0,2*Math.PI)
+            pencil.fill()
+        }
+
+        function diseñarTiro(x,y){
+            dibujarCirculo(x,y,10+10+10,"red")
+            dibujarCirculo(x,y,10+10,"white")
+            dibujarCirculo(x,y,10,"red")
+        }
+
+        function numeroAleatorio(maximo){
+            return Math.floor(Math.random()*maximo)
+        }
+        
+        function limpiarpantalla(){
+            pencil.clearRect(0,0,600,600)
+        }
+        function circuloAleatorio(){
+            limpiarpantalla()
+            Px = numeroAleatorio(600)
+            Py = numeroAleatorio(600)
+            diseñarTiro(Px,Py)   
+        }
+
+        function disparo(evento){
+            let Posicionx = evento.pageX-pantalla.offsetLeft
+            let Posiciony = evento.pageY - pantalla.offsetTop
+            console.log(Posicionx,Posiciony,Px,Py)
+            if((Posicionx>Px-10)&&(Posicionx<Px+10)&&(Posiciony>Py-10)&&(Posicionx<Py+10)){
+                alert("atinaste")
+            }
+        }
+        pantalla.onclick = disparo;
+
+        setInterval(circuloAleatorio,2000)
+    </script>
+</body>
+</html>
