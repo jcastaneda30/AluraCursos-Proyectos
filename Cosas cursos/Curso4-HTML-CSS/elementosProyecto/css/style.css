@@ -8,7 +8,7 @@
     padding: 50px;
 
 }
-h1{
+.Titulo-Centralizado{
     text-align: center; 
     background-color: lightblue;
 }
@@ -24,9 +24,7 @@ em strong{
 .diferenciales{
     background: white;
 }
-h2{
-    text-align: center;
-}
+
 .items{
     font-style: italic;
     font-size: 20px;
